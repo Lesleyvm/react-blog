@@ -1,0 +1,13 @@
+.default-link {
+    border-bottom: 1px solid transparent;
+}
+
+.active-link {
+    border-bottom: 1px solid mediumaquamarine;
+}
+
+/*.blog-item {*/
+/*    max-height: 200px; !* Hiermee beperk je de hoogte van elk blogitem *!*/
+/*    overflow-y: auto; !* Als de inhoud te hoog is, wordt er een verticale scrollbar weergegeven *!*/
+/*    margin-bottom: 20px; !* Voeg wat ruimte toe tussen de blogitems *!*/
+/*}*/

@@ -1,0 +1,10 @@
+.blogpost-container {
+    display: flex;
+    width: 80vh;
+    /*border: 1px solid yellow;*/
+}
+
+.blogpost-item {
+    display: flex;
+    flex-direction: column;
+}
