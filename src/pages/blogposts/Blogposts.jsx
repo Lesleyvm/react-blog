@@ -22,7 +22,7 @@ function Blogposts() {
             <p>
                 {blogpost.comments} reacties - {blogpost.shares} keer gedeeld
             </p>
-            <Link to="/overzicht">Terug naar de overzichtspagina</Link>
+            <Link to="/overzicht"><i>Terug naar de overzichtspagina</i></Link>
             </div>
         </section>
     );

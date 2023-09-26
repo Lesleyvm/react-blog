@@ -7,7 +7,7 @@ function Overzicht() {
 
     const blogList = posts.map((blog) => (
         <div key={blog.id} className="blog-item">
-            <Link to={`/blogposts/${blog.id}`}>{blog.title} ({blog.author})</Link>
+            <Link to={`/blogposts/${blog.id}`}><h4>{blog.title} ({blog.author})</h4></Link>
             <p>
                 {blog.comments} reacties - {blog.shares} keer gedeeld
             </p>
@@ -15,11 +15,14 @@ function Overzicht() {
     ));
 
     return (
-        <div className="blog-list">
-            <p>Totaal aantal posts: {totalPosts}</p>
-            {blogList}
-        </div>
+        <section>
+            <h2>Totaal aantal posts: {totalPosts}</h2>
+            <div className="blog-list">
+                {blogList}
+            </div>
+        </section>
     );
 
 }
-    export default Overzicht;
+
+export default Overzicht;
