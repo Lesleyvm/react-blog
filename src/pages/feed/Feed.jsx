@@ -42,7 +42,7 @@ function Feed() {
                                }
                            })}
                     />
-                    {errors.title && <p>{errors.title.message}</p>}
+                    {errors.title && <p className="error-message">{errors.title.message}</p>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="sub-title">Sub-titel</label>
@@ -55,7 +55,7 @@ function Feed() {
                                }
                            })}
                     />
-                    {errors['sub-title'] && <p>{errors['sub-title'].message}</p>}
+                    {errors['sub-title'] && <p className="error-message">{errors['sub-title'].message}</p>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="author">Auteur</label>
@@ -68,7 +68,7 @@ function Feed() {
                                }
                            })}
                     />
-                    {errors['author-field'] && <p>{errors['author-field'].message}</p>}
+                    {errors['author-field'] && <p className="error-message">{errors['author-field'].message}</p>}
                 </div>
             </fieldset>
             <fieldset>
@@ -95,7 +95,7 @@ function Feed() {
                             }
                         })}
                     />
-                    {errors['input-blog'] && <p>{errors['input-blog'].message}</p>}
+                    {errors['input-blog'] && <p className="error-message">{errors['input-blog'].message}</p>}
                 </div>
             </fieldset>
             <button type="submit">Verzenden</button>

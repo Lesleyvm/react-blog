@@ -23,7 +23,7 @@ fieldset {
     width: 150%;
 }
 
-p {
+.error-message {
     /*font-size: small;*/
     color: red;
 }
