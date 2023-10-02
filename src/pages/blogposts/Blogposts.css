@@ -1,5 +1,6 @@
 .blogpost-container {
     display: flex;
+    flex-direction: column;
     width: 80vh;
     border: 1px solid mediumaquamarine;
     padding: 15px;
