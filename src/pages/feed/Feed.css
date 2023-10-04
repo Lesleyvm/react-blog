@@ -26,6 +26,14 @@ fieldset {
 .error-message {
     /*font-size: small;*/
     color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.succes-message {
+    color: mediumaquamarine;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 textarea {

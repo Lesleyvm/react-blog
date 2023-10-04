@@ -1,3 +1,5 @@
+// is de code van eerdere opdracht
+
 import {Link, useParams} from 'react-router-dom';
 import posts from '/src/constants/data.json';
 import './Blogposts.css'

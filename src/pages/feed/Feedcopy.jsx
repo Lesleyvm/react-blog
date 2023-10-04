@@ -1,3 +1,5 @@
+// is de code van eerdere opdracht
+
 import './Feed.css';
 import {useForm} from 'react-hook-form';
 import {useNavigate} from 'react-router-dom';
