@@ -29,7 +29,7 @@ function Blogposts() {
                 <p>Geschreven door {post.author} op {new Date(post.created).toLocaleDateString()}</p>
                 <p>{post.content}</p>
                 <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
-                {error === true && <p className="error-message">Er is iets mis gegaan..</p>}
+                {error && <p className="error-message">Er is iets mis gegaan..</p>}
                 <Link to="/overzicht"><i>Terug naar de overzichtspagina</i></Link>
             </div>
         </section>

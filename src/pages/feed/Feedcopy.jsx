@@ -1,44 +1,27 @@
 import './Feed.css';
 import {useForm} from 'react-hook-form';
 import {useNavigate} from 'react-router-dom';
-import axios from "axios";
-import {useState} from "react";
 function Feed() {
     const {register, handleSubmit, formState: {errors}} = useForm();
     const navigate = useNavigate();
-    const [error, toggleError] = useState(false);
-    const [blogpost, setBlogpost] = useState([])
-
     function calculateReadTime(content) {
         const wordCount = content.split(' ').length;
         const estimatedReadTime = Math.ceil((wordCount / 100) * 0.3);
         return estimatedReadTime;
     }
-   async function handleFormSubmit(data) {
+    function handleFormSubmit(data) {
         const currentTimestamp = new Date().toISOString();
         const calculatedReadTime = calculateReadTime(data['input-blog']);
         const formData = {
-            title: data.title,
-            subtitle: data['sub-title-field'],
-            content: data['input-blog'],
+            ...data,
             created: currentTimestamp,
-            author: data['author-field'],
             readTime: calculatedReadTime,
             comments: 0,
             shares: 0,
         };
 
-        try {
-            const result = await axios.post("http://localhost:3000/posts", formData);
-            setBlogpost(result.data);
-            console.log(blogpost)
-            navigate("/overzicht");
-
-        } catch (e) {
-            console.error(e);
-            toggleError(true);
-        }
-
+        console.log(formData);
+        navigate("/overzicht");
     }
 
     console.log('ERRORS', errors);
@@ -46,7 +29,6 @@ function Feed() {
     return (
         <form onSubmit={handleSubmit(handleFormSubmit)}>
             <h2>Laat jouw verhaal horen!</h2>
-            {error && <p className="error-message">Er is iets mis gegaan..</p>}
             <fieldset>
                 <legend>Gegevens</legend>
                 <div className="form-group">
