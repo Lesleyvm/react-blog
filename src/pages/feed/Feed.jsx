@@ -50,7 +50,7 @@ function Feed() {
         <div>
             {success ? (
                 <div>
-                    <p>De blogpost is succesvol toegevoegd! Je kunt deze <Link to={`/blogposts/${blogpost.id}`}>hier</Link> bekijken:</p>
+                    <p className="succes-message">De blogpost is succesvol toegevoegd! Je kunt deze <Link to={`/blogposts/${blogpost.id}`}>hier</Link> bekijken:</p>
                 </div>
             ) : (
                 <form onSubmit={handleSubmit(handleFormSubmit)}>
