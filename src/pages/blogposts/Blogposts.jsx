@@ -36,10 +36,11 @@ function Blogposts() {
 
     return (
         <section className="blogpost-container">
-
+            {Object.keys(post).length === 0 && (
             <div className="button-wrapper">
                 <button type="button" onClick={fetchPosts}>Post details:</button>
             </div>
+            )}
 
             {deleted ? (
                 <div>
