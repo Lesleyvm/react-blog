@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import './Overzicht.css'
 
@@ -7,6 +7,9 @@ function Overzicht() {
     const [blog, setBlog] = useState([]);
     const [error, toggleError] = useState(false);
 
+    useEffect(() => {
+        fetchPosts();
+    }, []);
     async function fetchPosts() {
         try {
             const response = await axios.get('http://localhost:3000/posts')
@@ -28,13 +31,16 @@ function Overzicht() {
 
     return (
         <section className="blog-list-container">
-            <div className="button-wrapper">
-                <button type="button" onClick={fetchPosts}>Haal hier alle posts op!</button>
-            </div>
+
+            {/*///Hier stond de button voordat er useEffect is gebruikt///*/}
+            {/*<div className="button-wrapper">*/}
+            {/*    <button type="button" onClick={fetchPosts}>Haal hier alle posts op!</button>*/}
+            {/*</div>*/}
+
             <h2>Totaal aantal posts: {blog.length}</h2>
             <div className="blog-list">
                 {blogList}
-                {error === true && <p className="error-message">Er is iets mis gegaan..</p>}
+                {error && <p className="error-message">Er is iets mis gegaan..</p>}
             </div>
         </section>
     )

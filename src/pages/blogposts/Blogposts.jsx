@@ -1,7 +1,7 @@
 import {Link, useParams} from 'react-router-dom';
 import './Blogposts.css'
 import axios from "axios";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function Blogposts() {
     const {id} = useParams();
@@ -10,7 +10,10 @@ function Blogposts() {
     const [error, toggleError] = useState(false);
     const [deleted, toggleDeleted] = useState(false);
 
-    async function fetchPosts() {
+    useEffect(() => {
+        fetchPost();
+    }, []);
+    async function fetchPost() {
         try {
             const response = await axios.get(`http://localhost:3000/posts/${id}`)
             setPost(response.data);
@@ -36,11 +39,13 @@ function Blogposts() {
 
     return (
         <section className="blogpost-container">
-            {Object.keys(post).length === 0 && (
-            <div className="button-wrapper">
-                <button type="button" onClick={fetchPosts}>Post details:</button>
-            </div>
-            )}
+
+            {/*///Hier stond de button voordat er useEffect is gebruikt///*/}
+            {/*{Object.keys(post).length === 0 && (*/}
+            {/*<div className="button-wrapper">*/}
+            {/*    <button type="button" onClick={fetchPost}>Post details:</button>*/}
+            {/*</div>*/}
+            {/*)}*/}
 
             {deleted ? (
                 <div>
@@ -62,10 +67,8 @@ function Blogposts() {
                 </div>
 
             </div>)}
-
         </section>
     );
 }
-
 
 export default Blogposts;

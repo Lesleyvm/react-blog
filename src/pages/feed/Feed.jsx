@@ -127,7 +127,8 @@ function Feed() {
                         </div>
                     </fieldset>
                     <button type="submit">Verzenden</button>
-                </form>)}
+                </form>
+            )}
         </div>
     );
 }
