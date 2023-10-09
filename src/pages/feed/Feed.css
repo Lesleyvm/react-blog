@@ -1,0 +1,55 @@
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.input-blog {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+legend {
+    font-weight: 500;
+}
+
+fieldset {
+    border: 2px solid #ededed;
+    border-radius: 4px;
+    margin: 16px 0;
+    width: 150%;
+}
+
+.error-message {
+    /*font-size: small;*/
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.succes-message {
+    color: mediumpurple;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+textarea {
+    margin: 20px
+}
+
+button {
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+    margin: 0 16px 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
